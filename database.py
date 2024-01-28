@@ -4,13 +4,12 @@ import sqlite3
 CREATE_MOVIE_TABLE = """CREATE TABLE IF NOT EXISTS movies(
     id INTEGER PRIMARY KEY,
     title TEXT,
-    release_timestamp REAL,
+    release_timestamp REAL
 );"""
 
 CREATE_USERS_TABLE = """CREATE TABLE IF NOT EXISTS users(
     username TEXT PRIMARY KEY
-)
-"""
+);"""
 
 CREATE_WATCHED_TABLE = """CREATE TABLE IF NOT EXISTS watched(
     user_username TEXT,
@@ -20,7 +19,7 @@ CREATE_WATCHED_TABLE = """CREATE TABLE IF NOT EXISTS watched(
 );"""
 
 INSERT_MOVIES = "INSERT INTO movies (title, release_timestamp) VALUES (?, ?);"
-INSERT_USER = "INSERT INTO user (username) VALUES (?);"
+INSERT_USER = "INSERT INTO users (username) VALUES (?);"
 DELETE_MOVIE = "DELETE FROM movies WHERE title = ?;"
 SELECT_ALL_MOVIES = "SELECT * FROM movies;"
 SELECT_UPCOMING_MOVIES = "SELECT * FROM movies WHERE release_timestamp > ?;"
